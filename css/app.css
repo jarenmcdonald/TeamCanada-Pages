@@ -5,7 +5,16 @@ body {
   background-color: #fff;
   padding: 0;
   margin: 0;
-  background-image: url("../images/ice_age.png"); }
+  background-image: url("../images/ice_age.png");
+  overflow-x: hidden; }
+
+::selection {
+  background: #df8f92;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  background: #df8f92;
+  /* Gecko Browsers */ }
 
 p {
   font-size: 1em; }
@@ -52,6 +61,8 @@ a:hover {
   font-weight: 400;
   text-transform: uppercase;
   font-size: .9em; }
+  .redButton a, .whiteButton a, .grayButton a {
+    color: #fafafa; }
 
 .redButton:hover, .whiteButton:hover, .grayButton:hover {
   background-color: #282828; }
@@ -59,11 +70,15 @@ a:hover {
 .whiteButton {
   background-color: #fafafa;
   color: #d4222a; }
+  .whiteButton a {
+    color: #d4222a; }
 
 .grayButton {
   background-color: #282828;
   color: #fafafa;
   margin-top: 20px; }
+  .grayButton a {
+    color: #282828; }
 
 .submitButton {
   background-color: #d4222a;
@@ -229,7 +244,14 @@ a:hover {
     display: inline; }
   #heroSocial ul img {
     margin-top: 20px;
-    max-width: 15%; }
+    max-width: 15%;
+    opacity: 1;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease .2s;
+    -o-transition: all ease .2s;
+    transition: all ease 0.2s; }
+  #heroSocial ul img:hover {
+    opacity: .2; }
   #heroSocial ul #twitterimg {
     margin-left: 55px;
     margin-right: 55px; }
@@ -304,6 +326,9 @@ a:hover {
     display: none; }
   #tourHome p {
     padding-bottom: 10px; }
+
+#learnHomeButton {
+  font-weight: 700; }
 
 /*Botique Home*/
 /*Botique*/
@@ -432,6 +457,9 @@ a:hover {
     margin: 0 auto;
     width: 60%;
     margin-bottom: 40px; }
+
+  .redButton:focus, .whiteButton:focus, .grayButton:focus {
+    background-color: #d4222a; }
 
   /*Hero Banner*/
   .hero {
@@ -579,6 +607,9 @@ a:hover {
     display: inline;
     float: right; }
 
+  #mainNav {
+    opacity: .95; }
+
   #mainNav ul {
     float: right;
     list-style-type: none;
@@ -649,19 +680,23 @@ a:hover {
     #learnHome h2 {
       font-size: 2em;
       padding-top: 60px;
-      padding-bottom: 30px; }
+      padding-bottom: 30px;
+      text-align: center; }
     #learnHome h3 {
-      text-align: right; }
+      text-align: left; }
     #learnHome img {
-      margin: 0 auto; }
+      margin-top: 40px; }
     #learnHome p {
       margin: 0; }
 
   /*Tour Home*/
-  #tourHome {
-    background-image: url("../images/bg2.jpg");
+  #tourBG {
+    background-image: url("../images/bg3.jpg");
     background-repeat: no-repeat;
-    background-size: 120%; }
+    background-size: 100%; }
+
+  #tourHome {
+    background: none; }
     #tourHome h3 {
       display: block;
       font-size: 1em;
@@ -677,6 +712,9 @@ a:hover {
       display: block;
       margin: 0 auto;
       margin-bottom: 20px; }
+    #tourHome #tourButton {
+      margin: 0 auto;
+      margin-bottom: 40px; }
 
   /*Footer*/
   #footerBG {
@@ -741,16 +779,468 @@ a:hover {
 
   #content {
     display: inline;
-<<<<<<< HEAD
-    float: right; } }
-/*EVENTS PAGE*/
-=======
     float: right; }
 
   #footeNav {
     display: none; } }
-/*EVEBTS PAGE*/
->>>>>>> origin/master
+/*About page*/
+.aboutHero {
+  margin-top: 100px;
+  background-color: white;
+  background-image: url("../images/team_photo_small.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -o-transition: background 1s linear;
+  transition: background 1s linear;
+  z-index: -2; }
+  .aboutHero h1 {
+    color: #fafafa;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.2em;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.32); }
+  .aboutHero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: -moz-linear-gradient(top, transparent 0%, rgba(1, 1, 1, 0.98) 64%, rgba(2, 2, 2, 0.98) 92%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(1, 1, 1, 0.98) 64%, rgba(2, 2, 2, 0.98) 92%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, transparent 0%, rgba(1, 1, 1, 0.98) 64%, rgba(2, 2, 2, 0.98) 92%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e0101010',GradientType=0 );
+    /* IE6-9 */ }
+  .aboutHero p {
+    color: #fafafa;
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: 80px;
+    font-family: "Gentium Book Basic", serif;
+    font-size: 1.2em;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.32); }
+
+#aboutThumbBG {
+  width: 100%;
+  background-color: #d4222a; }
+
+#aboutThumb {
+  background-color: #d4222a; }
+  #aboutThumb h3 {
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear; }
+  #aboutThumb h3:hover {
+    color: #f09fa3; }
+  #aboutThumb p {
+    color: white;
+    font-family: "Gentium Book Basic", serif;
+    font-style: italic;
+    font-size: 1em;
+    margin-bottom: 10px; }
+  #aboutThumb img {
+    margin-top: 40px;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    max-width: 100px; }
+  #aboutThumb img:hover {
+    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    -ms-transform: rotate(5deg); }
+
+#team table {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  border: none; }
+#team thead {
+  background-color: #282828;
+  color: #fafafa;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em; }
+#team th {
+  color: #fafafa; }
+
+#table1Container {
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+#table2Container {
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+#table3Container {
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+#table4Container {
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+.teamButton {
+  margin-top: 30px;
+  background-color: #d4222a;
+  color: #fafafa;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em; }
+
+.teamButton:hover {
+  background-color: #282828; }
+
+/* Medium and up - 1024px */
+@media screen and (min-width: 40em) {
+  .aboutHero {
+    background-image: url("../images/team_photo_medium.jpg"); }
+    .aboutHero h1 {
+      margin-top: 70px;
+      margin-bottom: 70px;
+      font-size: 3.2em; }
+    .aboutHero p {
+      margin-bottom: 80px;
+      font-size: 1.5em;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 100px; } }
+/* Large and up - 1024px */
+@media screen and (min-width: 60em) {
+  .aboutHero {
+    background-image: url("../images/team_photo_large.jpg");
+    background-position: 0px 0px; }
+    .aboutHero p {
+      margin-bottom: 80px;
+      font-size: 1.5em;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 100px; } }
+/*EDUCATION PAGE*/
+.education {
+  margin-top: 100px;
+  background-color: black;
+  background-image: url("../images/hero_bg1.jpg");
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  background-size: 110%;
+  height: 150px;
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -o-transition: background 1s linear;
+  transition: background 1s linear; }
+
+#educationTitle h2 {
+  text-transform: uppercase;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em; }
+
+.bold {
+  font-weight: bold; }
+
+#educationInfo {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px #CCC;
+  padding-bottom: 40px;
+  margin-bottom: 40px; }
+  #educationInfo p {
+    color: #282828;
+    font-size: 1.25em;
+    font-family: "Gentium Book Basic", serif; }
+  #educationInfo p:first-child {
+    margin-top: 30px; }
+  #educationInfo #facets {
+    margin-bottom: 10px; }
+  #educationInfo ul {
+    padding-left: 15px;
+    margin: 0;
+    color: #282828;
+    font-size: 1.25em;
+    font-family: "Gentium Book Basic", serif; }
+
+#educationCurriculumHome {
+  padding-top: 0px;
+  background-color: #fafafa;
+  color: #282828;
+  font-size: 1.2em;
+  font-family: "Gentium Book Basic", serif; }
+  #educationCurriculumHome h2 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #d4222a;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 25px;
+    padding-bottom: 5px; }
+  #educationCurriculumHome h3 {
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fafafa;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    padding-bottom: 20px; }
+  #educationCurriculumHome img {
+    padding-bottom: 25px; }
+  #educationCurriculumHome p {
+    padding-bottom: 10px; }
+
+#minorHockeyHome {
+  background-color: #d4222a;
+  color: #fafafa;
+  font-size: 1.2em;
+  font-family: "Gentium Book Basic", serif; }
+  #minorHockeyHome h2 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #fafafa;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 25px;
+    padding-bottom: 5px; }
+  #minorHockeyHome h3 {
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fafafa;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    padding-bottom: 20px; }
+  #minorHockeyHome img {
+    padding-bottom: 25px; }
+  #minorHockeyHome p {
+    padding-bottom: 10px; }
+
+#learnHomeButton {
+  font-weight: 700; }
+
+#nationalContestHome {
+  padding-top: 0px;
+  background-color: #282828;
+  color: #fafafa;
+  font-size: 1.2em;
+  font-family: "Gentium Book Basic", serif; }
+  #nationalContestHome h2 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #fafafa;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 25px;
+    padding-bottom: 5px; }
+  #nationalContestHome h3 {
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fafafa;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    padding-bottom: 20px; }
+  #nationalContestHome img {
+    padding-bottom: 25px; }
+  #nationalContestHome p {
+    padding-bottom: 10px; }
+
+#centreExcellenceHome {
+  background-color: #fafafa;
+  color: #282828;
+  font-size: 1.2em;
+  font-family: "Gentium Book Basic", serif; }
+  #centreExcellenceHome h2 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #d4222a;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 25px;
+    padding-bottom: 5px; }
+  #centreExcellenceHome h3 {
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fafafa;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    padding-bottom: 20px; }
+  #centreExcellenceHome img {
+    padding-bottom: 25px; }
+  #centreExcellenceHome p {
+    padding-bottom: 10px; }
+
+#learnHomeButton {
+  font-weight: 700; }
+
+/* Medium and up  */
+@media screen and (min-width: 40em) {
+  #educationCurriculumHome img {
+    display: block;
+    margin: 0 auto; }
+  #educationCurriculumHome p {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+
+  #minorHockeyHome h2 {
+    padding-bottom: 10px; }
+  #minorHockeyHome img {
+    display: block;
+    margin: 0 auto; }
+  #minorHockeyHome p {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+
+  #nationalContestHome img {
+    display: block;
+    margin: 0 auto; }
+  #nationalContestHome p {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+
+  #centreExcellenceHome img {
+    display: block;
+    margin: 0 auto; }
+  #centreExcellenceHome p {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+
+  /* Large and up  */ }
+@media screen and (min-width: 40em) and (min-width: 64em) {
+  #educationTitle h2 {
+    font-size: 2.3em; }
+  #educationTitle h3 {
+    font-size: 1.4em; }
+
+  #educationCurriculumBG {
+    width: 100%;
+    background-color: #FFF; }
+
+  #educationCurriculumHome {
+    width: 80%; }
+    #educationCurriculumHome h2 {
+      font-size: 2em;
+      padding-top: 60px;
+      padding-bottom: 30px;
+      text-align: center; }
+    #educationCurriculumHome h3 {
+      text-align: left; }
+    #educationCurriculumHome img {
+      margin-top: 10px; }
+    #educationCurriculumHome p {
+      margin: 0; } }
+@media screen and (min-width: 40em) {
+  #minorHockeyBG {
+    width: 100%;
+    background-color: #FFF; }
+
+  #minorHockeyHome {
+    width: 80%; }
+    #minorHockeyHome h2 {
+      font-size: 2em;
+      padding-top: 60px;
+      padding-bottom: 10px;
+      text-align: center; }
+    #minorHockeyHome h3 {
+      text-align: left; }
+    #minorHockeyHome img {
+      margin-top: 10px; }
+    #minorHockeyHome p {
+      margin: 0; } }
+#nationalContestTitle h2 {
+  font-size: 2.3em; }
+#nationalContestTitle h3 {
+  font-size: 1.4em; }
+
+#nationalContestBG {
+  width: 100%;
+  background-color: #FFF; }
+
+#nationalContestHome {
+  width: 80%; }
+  #nationalContestHome h2 {
+    font-size: 2em;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    text-align: center; }
+  #nationalContestHome h3 {
+    text-align: left; }
+  #nationalContestHome img {
+    margin-top: 10px; }
+  #nationalContestHome p {
+    margin: 0; }
+
+#centreExcellenceBG {
+  width: 100%;
+  background-color: #FFF; }
+
+#centreExcellenceHome {
+  width: 80%; }
+  #centreExcellenceHome h2 {
+    font-size: 2em;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    text-align: center; }
+  #centreExcellenceHome h3 {
+    text-align: left; }
+  #centreExcellenceHome img {
+    margin-top: 10px; }
+  #centreExcellenceHome p {
+    margin: 0; }
+
+/*EVENTS PAGE*/
 .events {
   margin-top: 100px;
   background-color: black;
@@ -799,11 +1289,6 @@ a:hover {
     margin-bottom: 20px; }
 
 /* Medium and up  */
-@media screen and (min-width: 40em) {
-  #eventsTitle h2 {
-    font-size: 2.1em; }
-  #eventsTitle h3 {
-    font-size: 1.3em; } }
 /* Large and up  */
 @media screen and (min-width: 40em) {
   #eventsTitle h2 {
@@ -955,8 +1440,26 @@ h1 {
   font-weight: 700;
   font-size: 2.8em; }
 
+#contactTitle h2 {
+  color: #d4222a;
+  text-transform: uppercase;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em; }
+#contactTitle h3 {
+  color: #898898;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: "Gentium Book Basic", serif;
+  font-size: 1.3em;
+  font-style: italic; }
+
 #contactInfo {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 30px; }
   #contactInfo p {
     color: #282828;
@@ -976,8 +1479,22 @@ h1 {
 #contactForm textarea {
   font-size: 1em; }
 
+/* Medium and up  */
+@media screen and (min-width: 40em) {
+  #contactTitle h2 {
+    font-size: 2.3em; }
+  #contactTitle h3 {
+    font-size: 1.4em; } }
 /* Large and up - 1024px */
 @media screen and (min-width: 64em) {
+  #contactTitle h2 {
+    font-size: 2.3em; }
+  #contactTitle h3 {
+    font-size: 1.4em; }
+
+  #contactInfo {
+    margin-top: 20px; }
+
   .submitButton {
     width: 100px;
     padding-top: 10px;
@@ -1089,5 +1606,154 @@ h1 {
       margin: 0 auto;
       margin-top: 50px;
       font-family: "Gentium Book Basic", serif; } }
+/*Article page*/
+.articleHero {
+  margin-top: 100px;
+  height: 300px;
+  background-color: white;
+  background-image: url("../images/curse_of_clara.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0px -20px;
+  position: relative;
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -o-transition: background 1s linear;
+  transition: background 1s linear;
+  z-index: -2; }
+  .articleHero h1 {
+    color: #fafafa;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.2em;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.32); }
+  .articleHero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: -moz-linear-gradient(top, transparent 0%, rgba(1, 1, 1, 0.68) 64%, rgba(2, 2, 2, 0.68) 92%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(1, 1, 1, 0.68) 64%, rgba(2, 2, 2, 0.68) 92%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, transparent 0%, rgba(1, 1, 1, 0.68) 64%, rgba(2, 2, 2, 0.68) 92%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e0101010',GradientType=0 );
+    /* IE6-9 */ }
+
+.breadcrumbs {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #282828;
+  font-family: "Open Sans", sans-serif; }
+  .breadcrumbs a {
+    color: #d4222a; }
+
+#articleContent {
+  background-color: #fff; }
+  #articleContent h1 {
+    text-align: left;
+    color: #282828;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.6em;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    margin-bottom: 0;
+    margin-top: 30px; }
+  #articleContent h2 {
+    color: #aaa;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-bottom: 0; }
+  #articleContent h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5em; }
+  #articleContent p {
+    color: #282828;
+    font-family: "Gentium Book Basic", serif;
+    font-size: 1.2em;
+    margin-bottom: 20px; }
+  #articleContent img {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    max-width: 100%; }
+
+#articleShare h2 {
+  width: 100%;
+  background-color: #282828;
+  text-align: center;
+  color: #fafafa;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 20px;
+  margin-top: 40px; }
+
+#facebookShare {
+  background-color: #3b5998;
+  width: 100%; }
+
+#twitterShare {
+  background-color: #1ea1f2;
+  width: 100%; }
+
+#moreNews h2 {
+  width: 100%;
+  background-color: #282828;
+  text-align: center;
+  color: #fafafa;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 20px; }
+#moreNews h3 {
+  color: #d4222a;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  margin-bottom: 0px; }
+#moreNews h4 {
+  color: #aaa;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1em; }
+#moreNews img {
+  margin-bottom: 5px;
+  width: 100%; }
+
+#moreNewsButton {
+  background-color: #282828;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px; }
+
+#dasvidaniya {
+  background-image: url("../images/vladmir_petrov.jpg"); }
+
+#teamThanks {
+  background-image: url("../images/summit_thanks.jpg"); }
+
+#governmentHonours {
+  background-image: url("../images/government_honours.jpg"); }
+
+#preTourMedia {
+  background-image: url("../images/pre_tour_media.jpg"); }
 
 /*# sourceMappingURL=app.css.map */
